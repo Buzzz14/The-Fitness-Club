@@ -1,0 +1,240 @@
+.resize {
+    resize: none;
+}
+
+.container {
+    overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Urbanist&display=swap');
+
+/* applied to all  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist", sans-serif;
+}
+
+:root {
+    --bs-dark-color: #1a1d20;
+    --bs-dark-primary: #1c1c1c;
+    --bs-main-color: #fff;
+    --bs-primary-color: #a19f9f;
+    --bs-secondary-color: #29a9fd;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--bs-dark-color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    line-height: 3rem;
+    font-weight: 600;
+    font-size: 3.4rem;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--bs-dark-color);
+    letter-spacing: 0.07rem;
+    line-height: 1.55rem;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button,
+a {
+    font-size: 1.15rem;
+    letter-spacing: 0.03rem;
+    word-spacing: .1rem;
+}
+
+.text-light-grey {
+    color: var(--bs-primary-color);
+}
+
+
+.common-heading {
+    padding-top: 3.5rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+}
+
+.common-title {
+    margin-bottom: 2.2rem;
+}
+
+
+.bg-color {
+    background-color: var(--bs-dark-primary);
+}
+
+
+.hr {
+    width: 50%;
+    margin: 80px auto 0px;
+}
+
+/* applied to all  */
+
+
+
+
+
+
+
+
+
+
+
+/* navbar style  */
+
+.nav-link {
+    color: var(--bs-main-color);
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: var(--bs-primary-color);
+}
+
+.nav-link:hover {
+    color: var(--bs-primary-color);
+}
+
+/* navbar style ends  */
+
+
+
+
+
+
+
+/* main section start */
+.main {
+    background-image: linear-gradient(rgba(22, 22, 22, 0.2), rgba(22, 22, 22, 0.5)), url(../img/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.main .container {
+    display: grid;
+    place-content: center;
+    /*shorthand of justify-content: center and align-items: center;;*/
+    height: 40rem;
+}
+
+/* main section ends */
+
+
+
+
+
+
+
+
+
+
+
+/* packages secion starts  */
+
+.icon-span {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--bs-secondary-color) !important;
+    color: var(--bs-main-color) !important;
+}
+
+.card-box {
+    height: 420px;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-box:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transform: translateY(-10px);}
+
+/* service secion ends  */
+
+
+
+
+
+
+
+
+
+
+
+/* more info section starts */
+.more-info-section {
+    background-image: linear-gradient(rgba(22, 22, 22, 0.2), rgba(22, 22, 22, 0.5)), url("../img/dumbbells.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.more-info-section img {
+    max-width: 100%;
+    width: 70%;
+}
+
+/* more info section ends */
+
+
+
+
+
+
+
+
+.schedule-section {
+    background-image: linear-gradient(rgba(22, 22, 22, 0), rgba(22, 22, 22, 0.6)), url("../img/sch.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+
+/* trainer section starts  */
+.trainer-section {
+    padding-bottom: 3rem;
+}
+
+/* trainer section ends  */
+
+.t:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
