@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2024 at 04:07 AM
+-- Generation Time: Jan 04, 2024 at 04:49 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,13 +41,6 @@ CREATE TABLE `register` (
   `mem_duration` varchar(10) NOT NULL,
   `registered_date` varchar(50) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `register`
---
-
-INSERT INTO `register` (`id`, `fname`, `lname`, `address`, `pnumber`, `age`, `email`, `password`, `photo`, `mem_type`, `mem_duration`, `registered_date`) VALUES
-(18, 'Swanti', 'Shrestha', 'Thimi', '9841211761', 18, 's@gmail.com', '202cb962ac59075b964b07152d234b70', 0x69736d74313730323832393938362e6a7067, 'Yogastic', '3', '2023-12-17 21:36:48');
 
 --
 -- Indexes for dumped tables
