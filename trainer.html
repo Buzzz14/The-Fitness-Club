@@ -1,88 +1,30 @@
-<?php
-session_start();
-include "../php/config.php";
-
-$sql = "SELECT register.photo FROM register WHERE email LIKE '".$_SESSION["email"]."'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="icon" href="./img/logo.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="The Fitness Club is a state of the art GYM, complete with equipment for cardio and strength training." />
-
-    <link rel="icon" href="../img/logo.png" />
-
+    <title>The Fitness Club - Gym | Cardio | Yoga | Zumba</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="./index.css">
-
-    <title>The Fitness Club - Gym | Cardio | Yoga | Zumba</title>
-    <style>
-        /* Trainer section styles */
-        .trainer-section {
-            background-color: #f8f9fa;
-        }
-
-        /* Trainer cards */
-        .t {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .t img {
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .t-item {
-            color: #dc3545;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* footer section */
-        .site-links h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .site-links .site-link {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.5s ease;
-        }
-
-        .site-links .site-link:hover {
-            color: #dc3545;
-            /* Red color on hover */
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/trainer.css">
 </head>
 
 <body>
     <div class="position-fixed bottom-0 end-0">
-        <a href="#top"><img class="m-4" src="../img/uparrow.png" alt="Error" height="50px" /></a>
+        <a href="#top"><img class="m-4" src="./img/uparrow.png" alt="Error" height="50px" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" data-bs-title="Move to Top" /></a>
     </div>
     <nav class="navbar navbar-expand-lg py-4 bg-dark" data-bs-theme="dark">
         <div class="container gap-5" style="overflow: visible;">
-            <a class="navbar-brand text-white order-2" href="aft_login.php" data-bs-toggle="tooltip"
+            <a class="navbar-brand text-white order-2" href="index.html" data-bs-toggle="tooltip"
                 data-bs-placement="bottom" data-bs-title="TFC">The Fitness Club</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -97,53 +39,29 @@ if ($result->num_rows > 0) {
                 <div class="offcanvas-body">
                     <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3 gap-3">
                         <li class="nav-item">
-                            <a class="nav-link text-capitalize text-center" aria-current="page" href="./aft_login.php"
+                            <a class="nav-link text-capitalize text-center " aria-current="page" href="./index.html"
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-capitalize text-center" href="./about.php" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" data-bs-title="About">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-capitalize text-center active" href="./trainer.php"
+                            <a class="nav-link text-capitalize text-center active" href="./trainer.html"
                                 data-bs-toggle="tooltip" data-bs-placement="bottom"
                                 data-bs-title="Trainers">Trainers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-capitalize text-center" href="./schedule.php"
-                                data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                data-bs-title="Schedule">Schedule</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-capitalize text-center" href="./packages.php"
+                            <a class="nav-link text-capitalize text-center" href="./packages.html"
                                 data-bs-toggle="tooltip" data-bs-placement="bottom"
                                 data-bs-title="Packages">Packages</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-danger border border-white text-capitalize px-4 py-2 fw-bold text-center"
-                                href="./ptrainer.php" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                data-bs-title="Hire Private Trainer">Hire Private Trainer</a>
+                            <a href="" class="btn btn-danger border border-light text-capitalize px-4 py-2 fw-bold"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Learn More">
+                                Get Started!</a>
                         </li>
                     </ul>
                 </div>
             </div>
-
-            <div class="dropdown order-3">
-                <img class="rounded-circle" src="../php/photo/<?php  echo $row['photo'];?>" height="100px" width="100px"
-                    style="cursor: pointer;" alt="Profile" class="dropdown-toggle" id="profileDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                    <li><a class="dropdown-item" href="../php/perinfo.php">Personal Details</a></li>
-                    <li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
-
-    <?php
-    }
-    }
-    ?>
 
     <section class="trainer-section">
         <div class="container text-center  common-title fw-bold">
@@ -154,7 +72,7 @@ if ($result->num_rows > 0) {
         <div class="container">
             <div class="row p-5 g-5">
                 <div class="col-12 t d-flex gap-5" id="1">
-                    <img src="../img/t1.png" alt="t1" height="250px" />
+                    <img src="./img/t1.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Nathan FitFlow</p>
                         <p class="t-item">Yoga Trainer</p><br />
@@ -167,20 +85,20 @@ if ($result->num_rows > 0) {
                             strength and mental clarity through the practice of yoga.</p><br>
                         <p><strong>Available from:</strong> 8AM - 12PM to 4PM - 8PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="2">
-                    <img src="../img/t2.png" alt="t1" height="250px" />
+                    <img src="./img/t2.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Jack Fitness</p>
                         <p class="t-item">Gym Instructor</p><br />
@@ -194,20 +112,20 @@ if ($result->num_rows > 0) {
                             experience.</p><br>
                         <p><strong>Available from:</strong> 6AM - 10AM to 6PM - 10PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="3">
-                    <img src="../img/t3.png" alt="t1" height="250px" />
+                    <img src="./img/t3.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Lucas Active</p>
                         <p class="t-item">Zumba Instructor</p><br />
@@ -220,20 +138,20 @@ if ($result->num_rows > 0) {
                             His classes are a celebration of fitness and fun.</p><br>
                         <p><strong>Available from:</strong> 7AM - 11AM to 6PM - 10PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="4">
-                    <img src="../img/t4.png" alt="t1" height="250px" />
+                    <img src="./img/t4.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Ethan Flex</p>
                         <p class="t-item">Yoga Trainer</p><br />
@@ -247,20 +165,20 @@ if ($result->num_rows > 0) {
                         <br>
                         <p><strong>Available from:</strong> 6AM - 10AM to 5PM - 9PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="5">
-                    <img src="../img/t5.png" alt="t1" height="250px" />
+                    <img src="./img/t5.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Olivia Fitwell</p>
                         <p class="t-item">Gym Instructor</p><br />
@@ -273,20 +191,20 @@ if ($result->num_rows > 0) {
                             and comprehensive fitness routine tailored to their individual goals.</p><br>
                         <p><strong>Available from:</strong> 7AM - 11AM to 4PM - 8PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="6">
-                    <img src="../img/t6.png" alt="t1" height="250px" />
+                    <img src="./img/t6.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Max Zest</p>
                         <p class="t-item">Zumba Instructor</p><br />
@@ -300,20 +218,20 @@ if ($result->num_rows > 0) {
                         <p><strong>Available from:</strong> 9AM - 1PM to 6PM - 10PM</p>
 
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="7">
-                    <img src="../img/t8.png" alt="t1" height="250px" />
+                    <img src="./img/t8.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Sophie Wellness</p>
                         <p class="t-item">Yoga Trainer</p><br />
@@ -327,20 +245,20 @@ if ($result->num_rows > 0) {
                             life.</p><br>
                         <p><strong>Available from:</strong> 8AM - 12PM to 4PM - 8PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="8">
-                    <img src="../img/t7.png" alt="t1" height="250px" />
+                    <img src="./img/t7.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Leo Strong</p>
                         <p class="t-item">Gym Instructor</p><br />
@@ -353,20 +271,20 @@ if ($result->num_rows > 0) {
                             He emphasizes consistency and determination to attain lasting results.</p><br>
                         <p><strong>Available from:</strong> 6AM - 10AM to 5PM - 9PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 t d-flex gap-5" id="9">
-                    <img src="../img/t9.png" alt="t1" height="250px" />
+                    <img src="./img/t9.png" alt="t1" height="250px" />
                     <div class="border p-3" style="width: 800px;">
                         <p class="fw-bolder mt-4">Ava DanceFit</p>
                         <p class="t-item">Zumba Instructor</p><br />
@@ -379,13 +297,13 @@ if ($result->num_rows > 0) {
                             Her classes are a celebration of fitness and fun.</p><br>
                         <p><strong>Available from:</strong> 7AM - 11AM to 6PM - 10PM</p>
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start p-3">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
+                                    width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Facebook" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
                                     alt="Instagram" width="40em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Instagram" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
                                     width="36em" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                     data-bs-title="Twitter" /></a>
                         </div>
@@ -409,12 +327,12 @@ if ($result->num_rows > 0) {
                     <div class="text-center text-lg-start">
                         <h3 class="text-white">Connect With Us</h3><br />
                         <div class="d-flex gap-2 justify-content-center justify-content-lg-start">
-                            <a href="https://www.facebook.com/"><img src="../img/fb.png" class="img-fluid"
-                                    alt="Facebook" width="40em" /></a>
-                            <a href="https://www.instagram.com/"><img src="../img/in.png" class="img-fluid"
-                                    alt="Instagram" width="40em" /></a>
-                            <a href="https://twitter.com/"><img src="../img/twi.png" class="img-fluid" alt="Twitter"
+                            <a href="https://www.facebook.com/"><img src="./img/fb.png" class="img-fluid" alt="Facebook"
                                     width="40em" /></a>
+                            <a href="https://www.instagram.com/"><img src="./img/in.png" class="img-fluid"
+                                    alt="Instagram" width="40em" /></a>
+                            <a href="https://twitter.com/"><img src="./img/twi.png" class="img-fluid" alt="Twitter"
+                                    width="35em" style="filter: invert(1);" /></a>
                         </div>
                     </div>
                 </div>
@@ -423,15 +341,12 @@ if ($result->num_rows > 0) {
                         <h3 class="text-white">Site Links</h3>
                         <div class="row">
                             <div class="col-6">
-                                <a href="./aft_login.php" class="site-link">Home</a>
-                                <a href="./about.php" class="site-link">About</a>
-                                <a href="./trainer.php" class="site-link">Trainers</a>
-                                <a href="./schedule.php" class="site-link">Schedule</a>
+                                <a href="./index.html" class="site-link">Home</a>
+                                <a href="./trainer.html" class="site-link">Trainers</a>
+                                <a href="./packages.html" class="site-link">Packages</a>
                             </div>
                             <div class="col-6">
-                                <a href="./packages.php" class="site-link">Packages</a>
-                                <a href="./ptrainer.php" class="site-link">Hire Private Trainer</a>
-                                <a href="../php/perinfo.php" class="site-link">View Personal Info</a>
+                                <a href="./perinfo.html" class="site-link">View Personal Info</a>
                             </div>
                         </div>
                     </div>
@@ -446,7 +361,7 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

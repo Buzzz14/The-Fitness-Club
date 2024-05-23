@@ -130,7 +130,7 @@ a {
 
 /* main section start */
 .main {
-    background-image: linear-gradient(rgba(22, 22, 22, 0.2), rgba(22, 22, 22, 0.5)), url(../img/bg1.jpg);
+    background-image: linear-gradient(rgba(22, 22, 22, 0.2), rgba(22, 22, 22, 0.5)), url(./img/bg1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -185,7 +185,7 @@ a {
 
 /* more info section starts */
 .more-info-section {
-    background-image: linear-gradient(rgba(22, 22, 22, 0.2), rgba(22, 22, 22, 0.5)), url("../img/dumbbells.jpg");
+    background-image: linear-gradient(rgba(22, 22, 22, 0.2), rgba(22, 22, 22, 0.5)), url("./img/dumbbells.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,3 +228,25 @@ a {
 
 
 
+
+
+
+
+
+/* sitelink */
+.site-links h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.site-links .site-link {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.site-links .site-link:hover {
+    color: #dc3545;
+}

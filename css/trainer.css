@@ -1,0 +1,21 @@
+.trainer-section {
+    background-color: #f8f9fa;
+}
+.t {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.t img {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.t-item {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
