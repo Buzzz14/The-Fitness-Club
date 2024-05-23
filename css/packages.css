@@ -1,0 +1,17 @@
+.icon-span {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--bs-secondary-color) !important;
+    color: var(--bs-main-color) !important;
+}
+
+.card-box {
+    height: 420px;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-box:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transform: translateY(-10px);
+}
