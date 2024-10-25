@@ -1,3 +1,7 @@
+.packages-section{
+    background-color: #f1f1f1;
+}
+
 .icon-span {
     width: 2.5rem;
     height: 2.5rem;
@@ -6,6 +10,7 @@
 }
 
 .card-box {
+    background-color: #ffffff;
     height: 420px;
     width: 250px;
     transition: transform 0.3s ease-in-out;
@@ -14,4 +19,14 @@
 .card-box:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
     transform: translateY(-10px);
+}
+
+.arrow{
+    font-size: 2rem;
+
+}
+
+.arrow:hover{
+    opacity: 65%;
+    cursor: pointer;
 }
